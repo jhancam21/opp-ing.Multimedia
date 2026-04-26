@@ -2,15 +2,39 @@
    FUNDAMENTOS DE INGENIERÍA MULTIMEDIA — script.js
    ============================================================ */
 
-   
-document.addEventListener('play', function(e) {
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.querySelector('.bg-video');
+
+  if (video) {
+    video.play().catch(() => {
+      // por si el navegador lo bloquea
+      video.muted = true;
+      video.play();
+    });
+  }
+});
+
+// ------------------------
+document.addEventListener('DOMContentLoaded', () => {
+
   const media = document.querySelectorAll('audio, video');
 
+  // 🎧🎥 cuando se reproduce audio o video normal
+  document.addEventListener('play', function(e) {
+
   media.forEach(m => {
+
+    // 🚫 NO pausar el video de fondo
+    if (m.classList.contains('bg-video')) return;
+
+    // 🚫 NO pausar el que se está reproduciendo
     if (m !== e.target) {
       m.pause();
     }
+
   });
+
+  stopIframes();
 
 }, true);
 
