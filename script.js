@@ -10,15 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // 🎧🎥 cuando se reproduce audio o video normal
   document.addEventListener('play', function(e) {
 
-    media.forEach(m => {
-      if (m !== e.target) {
-        m.pause();
-      }
-    });
+  const media = document.querySelectorAll('audio, video');
 
-    stopIframes();
+  media.forEach(m => {
 
-  }, true);
+    // 🚫 NO pausar el video de fondo
+    if (m.classList.contains('bg-video')) return;
+
+    // 🚫 NO pausar el que se está reproduciendo
+    if (m !== e.target) {
+      m.pause();
+    }
+
+  });
+
+}, true);
 
   // 🧱 cuando el usuario entra al iframe (click)
   document.querySelectorAll('iframe').forEach(frame => {
