@@ -3,25 +3,13 @@
    ============================================================ */
 
    
-document.addEventListener('DOMContentLoaded', () => {
-
-  const media = document.querySelectorAll('audio, video');
-
-  // 🎧🎥 cuando se reproduce audio o video normal
-  document.addEventListener('play', function(e) {
-
+document.addEventListener('play', function(e) {
   const media = document.querySelectorAll('audio, video');
 
   media.forEach(m => {
-
-    // 🚫 NO pausar el video de fondo
-    if (m.classList.contains('bg-video')) return;
-
-    // 🚫 NO pausar el que se está reproduciendo
     if (m !== e.target) {
       m.pause();
     }
-
   });
 
 }, true);
