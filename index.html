@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamentos de la Ingeniería Multimedia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="page">
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <span class="nav-title">Ing. Multimedia</span>
+    <button class="nav-btn active" onclick="goTo('inicio')">Inicio</button>
+    <button class="nav-btn" onclick="goTo('multimedia')">¿Qué es?</button>
+    <button class="nav-btn" onclick="goTo('tipos')">Tipos</button>
+    <button class="nav-btn" onclick="goTo('aplicaciones')">Aplicaciones</button>
+    <button class="nav-btn" onclick="goTo('rol')">El Ingeniero</button>
+    <button class="nav-btn" onclick="goTo('quiz')">Quiz</button>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 1 — INICIO
+  ══════════════════════════════════════════════════ -->
+ <div class="section visible" id="s-inicio">
+  <div class="hero-video-banner">
+
+    <!-- 🎥 VIDEO DE FONDO -->
+    <div class="hero-video-wrapper">
+
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+        title="Video de fondo — Ingeniería Multimedia"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position:absolute;top:50%;left:50%;width:120%;height:120%;transform:translate(-50%,-50%);border:none;pointer-events:none;">
+      </iframe>
+
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <!-- 🧠 CONTENIDO -->
+    <div class="hero hero-over-video">
+
+      <div class="hero-tag" style="border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.12);">
+        Bienvenido al curso
+      </div>
+
+      <h1 class="hero-title" style="color:#fff;">
+        Fundamentos de la <span style="color:#4fffbe;">Ingeniería Multimedia</span>
+      </h1>
+
+      <p class="hero-sub" style="color:rgba(255,255,255,.85);">
+        Explora los pilares de una disciplina que fusiona tecnología, creatividad y comunicación para transformar cómo el mundo experimenta la información.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="goTo('multimedia')">Comenzar →</button>
+        <button class="btn-secondary" onclick="goTo('quiz')" style="border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.1);">
+          Ir al quiz
+        </button>
+      </div>
+
+      <!-- 🔊 AUDIO -->
+      <div style="margin:1.5rem 0 0;background:rgba(0,0,0,.35);border-radius:10px;border:.5px solid rgba(255,255,255,.15);padding:1rem 1.25rem;backdrop-filter:blur(6px);">
+
+        <div style="font-size:12px;font-weight:500;color:#4fffbe;margin-bottom:3px;">
+          🎙️ Instrumental Para Relajarse
+        </div>
+
+        <div style="font-size:11px;color:rgba(255,255,255,.7);margin-bottom:8px;">
+          Música de fondo :)
+        </div>
+
+        <audio id="audio-bienvenida" controls loop
+          style="width:100%;border-radius:6px;outline:none;accent-color:#4fffbe;">
+          <source src="assets/audio/Go-JoFondo.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+
+        <p style="font-size:10px;color:rgba(255,255,255,.5);margin-top:5px;">
+          ℹ️ Si el navegador bloquea el autoplay, presiona ▶ para reproducir.
+          <a href="https://freemusicarchive.org" target="_blank" style="color:#4fffbe;">
+            Fuente: Free Music Archive
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div style="padding:0 1.5rem;">
+      <div class="hero-visual" style="padding-top:1.5rem;border-top:.5px solid var(--border);">
+        <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">Tipos de media</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">+20</div><div class="hero-stat-label">Aplicaciones</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">Secciones</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Posibilidades</div></div>
+      </div>
+    </div>
+    <div class="home-links">
+      <div class="home-links-inner">
+        <div class="home-links-label">Recorrido de la página</div>
+        <div class="home-links-grid">
+          <div class="home-link-card" onclick="goTo('multimedia')" data-color="#1D9E75">
+            <div class="home-link-title">¿Qué es multimedia?</div>
+            <div class="home-link-sub">Definición e historia</div>
+          </div>
+          <div class="home-link-card" onclick="goTo('tipos')" data-color="#534AB7">
+            <div class="home-link-title">Tipos de multimedia</div>
+            <div class="home-link-sub">Texto, imagen, audio, video</div>
+          </div>
+          <div class="home-link-card" onclick="goTo('aplicaciones')" data-color="#D85A30">
+            <div class="home-link-title">Aplicaciones</div>
+            <div class="home-link-sub">Casos de uso reales</div>
+          </div>
+          <div class="home-link-card" onclick="goTo('rol')" data-color="#378ADD">
+            <div class="home-link-title">El Ingeniero</div>
+            <div class="home-link-sub">Rol, habilidades, carrera</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 2 — ¿QUÉ ES MULTIMEDIA?
+  ══════════════════════════════════════════════════ -->
+  <div class="section" id="s-multimedia">
+    <div class="content">
+      <div class="section-header">
+        <div class="section-tag">Fundamentos</div>
+        <h2 class="section-title">¿Qué es la multimedia?</h2>
+        <p class="section-desc">El término "multimedia" combina "multi" (múltiple) y "media" (medios), y describe la integración de dos o más tipos de contenido digital para comunicar información de forma enriquecida.</p>
+      </div>
+
+      <div class="mm-def-box">
+        <p><strong>Definición formal:</strong> La multimedia es la combinación integrada de dos o más medios digitales — texto, imagen, audio, video y animación — que se presentan de forma coordinada para transmitir un mensaje o experiencia. Puede ser <strong>lineal</strong> (el usuario sigue una secuencia fija) o <strong>no lineal</strong> (el usuario navega interactivamente).</p>
+      </div>
+
+      <!-- Ampliación: características y dimensiones de la multimedia -->
+      <div style="margin-bottom:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+        <div style="background:#f5f5f0;border-radius:10px;border:.5px solid var(--border);padding:1rem 1.25rem;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1D9E75;margin-bottom:.5rem;">🔗 Integración</div>
+          <p style="font-size:13px;color:var(--txt2);line-height:1.7;">Los elementos multimedia no se presentan de forma aislada; interactúan y se complementan para potenciar el mensaje. La integración puede ser <strong>sincrónica</strong> (en tiempo real, como una videollamada) o <strong>asincrónica</strong> (grabada, como un curso en línea).</p>
+        </div>
+        <div style="background:#f5f5f0;border-radius:10px;border:.5px solid var(--border);padding:1rem 1.25rem;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#534AB7;margin-bottom:.5rem;">🖱️ Interactividad</div>
+          <p style="font-size:13px;color:var(--txt2);line-height:1.7;">Una característica distintiva de la multimedia moderna es permitir que el usuario controle el flujo de información: pausar, explorar, decidir el recorrido. Esto la diferencia del simple audiovisual pasivo, según Vaughan (2011) en <em>Multimedia: Making It Work</em>.</p>
+        </div>
+        <div style="background:#f5f5f0;border-radius:10px;border:.5px solid var(--border);padding:1rem 1.25rem;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#D85A30;margin-bottom:.5rem;">📡 Digitalización</div>
+          <p style="font-size:13px;color:var(--txt2);line-height:1.7;">Todo contenido multimedia se convierte a un sistema binario (0s y 1s). La digitalización permite reproducir, copiar y distribuir contenidos sin pérdida de calidad, algo imposible con medios analógicos como el VHS o el casete.</p>
+        </div>
+      </div>
+
+      <!-- Clasificación de la multimedia -->
+      <div style="margin-bottom:1.5rem;">
+        <div class="section-tag" style="color:#378ADD;margin-bottom:.75rem">Clasificación de la multimedia</div>
+        <div style="background:var(--bg);border:.5px solid var(--border);border-radius:12px;overflow:hidden;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="background:var(--bg2);">
+                <th style="padding:.75rem 1rem;text-align:left;font-weight:600;color:var(--txt);border-bottom:.5px solid var(--border);">Tipo</th>
+                <th style="padding:.75rem 1rem;text-align:left;font-weight:600;color:var(--txt);border-bottom:.5px solid var(--border);">Descripción</th>
+                <th style="padding:.75rem 1rem;text-align:left;font-weight:600;color:var(--txt);border-bottom:.5px solid var(--border);">Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:.5px solid var(--border);">
+                <td style="padding:.65rem 1rem;color:#1D9E75;font-weight:500;">Lineal</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">El usuario sigue una secuencia predeterminada sin control sobre el orden</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">Película, presentación</td>
+              </tr>
+              <tr style="border-bottom:.5px solid var(--border);">
+                <td style="padding:.65rem 1rem;color:#534AB7;font-weight:500;">No lineal</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">El usuario navega libremente, elige su propio camino de aprendizaje</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">Sitio web, videojuego</td>
+              </tr>
+              <tr style="border-bottom:.5px solid var(--border);">
+                <td style="padding:.65rem 1rem;color:#D85A30;font-weight:500;">Hipermedia</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">Extiende el hipertexto con medios enriquecidos: audio, video e imagen interconectados</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">Wikipedia, plataformas LMS</td>
+              </tr>
+              <tr>
+                <td style="padding:.65rem 1rem;color:#378ADD;font-weight:500;">En tiempo real</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">Se genera y transmite simultáneamente; requiere conectividad constante</td>
+                <td style="padding:.65rem 1rem;color:var(--txt2);">Streaming, videoconferencia</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:11px;color:#999;margin-top:5px;">Clasificación basada en: Chapman, N. &amp; Chapman, J. (2009). <em>Digital Multimedia</em> (3.ª ed.). Wiley.</p>
+      </div>
+
+      <!-- Imagen convergencia digital -->
+      <div style="margin-bottom:1.5rem;">
+        <img
+          src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1000&q=80"
+          alt="Pantalla digital representando la convergencia de medios: texto, imagen, audio y video"
+          style="width:100%;max-height:240px;object-fit:cover;border-radius:12px;border:.5px solid rgba(0,0,0,.1);"
+        />
+        <p style="font-size:10px;color:#999;margin-top:4px;text-align:right;">Imagen: convergencia digital de medios — Unsplash (libre de uso)</p>
+      </div>
+
+      <!-- Áreas de aplicación conceptual -->
+      <div style="margin-bottom:1.5rem;">
+        <div class="section-tag" style="color:#1D9E75;margin-bottom:.75rem">¿Para qué sirve la multimedia?</div>
+        <div class="mm-def-box" style="border-left-color:#1D9E75;">
+          <p>Según Mayer (2009) en <em>Multimedia Learning</em> (Cambridge University Press), las personas aprenden mejor cuando combinan palabras e imágenes que cuando solo reciben palabras. Este principio —llamado <strong>principio multimedia</strong>— sustenta el uso de contenido audiovisual en educación, publicidad y comunicación corporativa. La multimedia no es solo tecnología: es un lenguaje con sus propias reglas de diseño y comunicación.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:.75rem;">
+          <div style="padding:.85rem 1rem;border-radius:10px;background:#E1F5EE;border:.5px solid #b2dfc9;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">📚</div>
+            <div style="font-size:12px;font-weight:600;color:#085041;">Educación</div>
+            <div style="font-size:11px;color:#3a7a5e;margin-top:2px;">e-learning, MOOCs, simuladores</div>
+          </div>
+          <div style="padding:.85rem 1rem;border-radius:10px;background:#EEEDFE;border:.5px solid #c4c0f7;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">🏥</div>
+            <div style="font-size:12px;font-weight:600;color:#3C3489;">Salud</div>
+            <div style="font-size:11px;color:#534AB7;margin-top:2px;">telemedicina, cirugías guiadas por AR</div>
+          </div>
+          <div style="padding:.85rem 1rem;border-radius:10px;background:#FAECE7;border:.5px solid #f0c4b0;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">🎮</div>
+            <div style="font-size:12px;font-weight:600;color:#4A1B0C;">Entretenimiento</div>
+            <div style="font-size:11px;color:#993C1D;margin-top:2px;">videojuegos, cine, streaming</div>
+          </div>
+          <div style="padding:.85rem 1rem;border-radius:10px;background:#E6F1FB;border:.5px solid #afd0f7;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">🏢</div>
+            <div style="font-size:12px;font-weight:600;color:#0C447C;">Empresas</div>
+            <div style="font-size:11px;color:#378ADD;margin-top:2px;">capacitación, marketing digital</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO educativo en español -->
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#534AB7;margin-bottom:.75rem;">📹 Video explicativo — ¿Qué es la multimedia?</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:.5px solid rgba(83,74,183,.2);">
+          <!-- Video educativo en español sobre fundamentos multimedia -->
+          <video controls
+  title="¿Qué es la Multimedia? — Explicación educativa en español"
+  style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;object-fit:cover;">
+  
+  <source src="assets/video/Que-es.mp4" type="video/mp4">
+
+</video>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:6px;">🎓 Fuente: YouTube — Introducción al concepto de multimedia en tecnología educativa (en español)</p>
+      </div>
+
+      <!-- VIDEO adicional en español: principio multimedia de Mayer -->
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#D85A30;margin-bottom:.75rem;">📹 Video — Teoría del aprendizaje multimedia (Mayer)</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:.5px solid rgba(216,90,48,.2);">
+          <!-- Video educativo en español sobre teoría multimedia de Mayer -->
+          <video controls
+  title="Teoría del aprendizaje multimedia de Richard Mayer — en español"
+  style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;object-fit:cover;">
+  
+  <source src="assets/video/TeoriaMayer.mp4" type="video/mp4">
+
+</video>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:6px;">🎓 Basado en: Mayer, R. E. (2009). <em>Multimedia Learning</em> (2.ª ed.). Cambridge University Press.</p>
+      </div>
+
+      <div class="anim-container">
+        <div class="anim-label">Visualización — flujo de datos multimedia</div>
+        <svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" class="anim-svg">
+          <rect x="10" y="50" width="80" height="60" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+          <text x="50" y="77" text-anchor="middle" font-size="11" fill="#085041" font-weight="500">Texto</text>
+          <text x="50" y="92" text-anchor="middle" font-size="10" fill="#0F6E56">.txt .html</text>
+          <rect x="10" y="120" width="80" height="32" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+          <text x="50" y="140" text-anchor="middle" font-size="11" fill="#3C3489" font-weight="500">Imagen</text>
+          <rect x="130" y="50" width="80" height="60" rx="8" fill="#FAECE7" stroke="#D85A30" stroke-width="0.5"/>
+          <text x="170" y="77" text-anchor="middle" font-size="11" fill="#4A1B0C" font-weight="500">Audio</text>
+          <text x="170" y="92" text-anchor="middle" font-size="10" fill="#993C1D">.mp3 .wav</text>
+          <rect x="130" y="120" width="80" height="32" rx="6" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+          <text x="170" y="140" text-anchor="middle" font-size="11" fill="#0C447C" font-weight="500">Video</text>
+          <path d="M92 80 L260 80" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+          <path d="M212 80 L310 80" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+          <rect x="250" y="55" width="100" height="50" rx="10" fill="#f5f5f0" stroke="#bbb" stroke-width="0.5" class="float"/>
+          <text x="300" y="77" text-anchor="middle" font-size="12" fill="#222" font-weight="700">Motor</text>
+          <text x="300" y="93" text-anchor="middle" font-size="11" fill="#666">Multimedia</text>
+          <path d="M350 80 L440 80" stroke="#1D9E75" stroke-width="1.5"/>
+          <rect x="440" y="45" width="140" height="70" rx="10" fill="#fff" stroke="#1D9E75" stroke-width="1"/>
+          <text x="510" y="73" text-anchor="middle" font-size="12" fill="#222" font-weight="700">Experiencia</text>
+          <text x="510" y="90" text-anchor="middle" font-size="11" fill="#666">Integrada</text>
+          <text x="510" y="105" text-anchor="middle" font-size="10" fill="#0F6E56">usuario → interacción</text>
+          <rect x="420" y="128" width="12" height="8" rx="1" fill="#1D9E75" class="signal-bar"/>
+          <rect x="434" y="122" width="12" height="14" rx="1" fill="#1D9E75" class="signal-bar"/>
+          <rect x="448" y="116" width="12" height="20" rx="1" fill="#1D9E75" class="signal-bar"/>
+          <rect x="462" y="110" width="12" height="26" rx="1" fill="#1D9E75" class="signal-bar"/>
+          <rect x="476" y="118" width="12" height="18" rx="1" fill="#1D9E75" class="signal-bar"/>
+        </svg>
+      </div>
+
+      <div class="section-tag" style="color:#534AB7;margin-bottom:.75rem">Hitos históricos</div>
+      <div class="history-row">
+        <div class="history-card"><div class="history-year">1945</div><div class="history-event">Vannevar Bush propone el Memex, precursor de la hipermedia</div></div>
+        <div class="history-card"><div class="history-year">1960</div><div class="history-event">Ted Nelson acuña el término "hipertexto"</div></div>
+        <div class="history-card"><div class="history-year">1984</div><div class="history-event">Apple Macintosh democratiza el uso de interfaces gráficas</div></div>
+        <div class="history-card"><div class="history-year">1991</div><div class="history-event">Tim Berners-Lee lanza la World Wide Web</div></div>
+        <div class="history-card"><div class="history-year">2005</div><div class="history-event">Nace YouTube, revolucionando el video en internet</div></div>
+        <div class="history-card"><div class="history-year">2020</div><div class="history-event">IA generativa y realidad extendida redefinen la multimedia</div></div>
+      </div>
+
+      <!-- Referencias bibliográficas ampliadas -->
+      <div style="margin-top:1.5rem;background:#f5f5f0;border-radius:10px;border:.5px solid rgba(0,0,0,.1);padding:1rem 1.25rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#666;margin-bottom:.75rem;">📚 Referencias bibliográficas</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:12px;color:var(--txt2);line-height:1.6;padding-bottom:8px;border-bottom:.5px solid var(--border);">
+            <span style="font-weight:600;color:var(--txt);">Mayer, R. E. (2009).</span> <em>Multimedia Learning</em> (2.ª ed.). Cambridge University Press.
+            <a href="https://www.cambridge.org/9780521735353" target="_blank" rel="noopener noreferrer" style="color:#1D9E75;font-size:11px;display:inline-flex;align-items:center;gap:3px;margin-left:4px;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver fuente
+            </a>
+          </div>
+          <div style="font-size:12px;color:var(--txt2);line-height:1.6;padding-bottom:8px;border-bottom:.5px solid var(--border);">
+            <span style="font-weight:600;color:var(--txt);">Chapman, N. &amp; Chapman, J. (2009).</span> <em>Digital Multimedia</em> (3.ª ed.). John Wiley &amp; Sons. — Referencia clave para la clasificación y tipos de multimedia.
+            <a href="https://www.wiley.com/en-us/Digital+Multimedia%2C+3rd+Edition-p-9780470858905" target="_blank" rel="noopener noreferrer" style="color:#534AB7;font-size:11px;display:inline-flex;align-items:center;gap:3px;margin-left:4px;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver fuente
+            </a>
+          </div>
+          <div style="font-size:12px;color:var(--txt2);line-height:1.6;padding-bottom:8px;border-bottom:.5px solid var(--border);">
+            <span style="font-weight:600;color:var(--txt);">Vaughan, T. (2011).</span> <em>Multimedia: Making It Work</em> (8.ª ed.). McGraw-Hill. — Texto clásico sobre producción e integración multimedia práctica.
+            <a href="https://www.mheducation.com/highered/product/multimedia-making-work-eighth-edition-vaughan/0071748466.html" target="_blank" rel="noopener noreferrer" style="color:#D85A30;font-size:11px;display:inline-flex;align-items:center;gap:3px;margin-left:4px;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver fuente
+            </a>
+          </div>
+          <div style="font-size:12px;color:var(--txt2);line-height:1.6;padding-bottom:8px;border-bottom:.5px solid var(--border);">
+            <span style="font-weight:600;color:var(--txt);">Wikipedia (2024).</span> Multimedia — definición, historia y clasificación.
+            <a href="https://es.wikipedia.org/wiki/Multimedia" target="_blank" rel="noopener noreferrer" style="color:#1D9E75;font-size:11px;display:inline-flex;align-items:center;gap:3px;margin-left:4px;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver fuente
+            </a>
+          </div>
+          <div style="font-size:12px;color:var(--txt2);line-height:1.6;">
+            <span style="font-weight:600;color:var(--txt);">MDN Web Docs (Mozilla, 2024).</span> Elementos multimedia en HTML5: &lt;video&gt;, &lt;audio&gt;, &lt;canvas&gt;.
+            <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/video" target="_blank" rel="noopener noreferrer" style="color:#534AB7;font-size:11px;display:inline-flex;align-items:center;gap:3px;margin-left:4px;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Ver fuente
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-footer">
+        <button class="btn-secondary" onclick="goTo('inicio')">← Inicio</button>
+        <button class="btn-primary" onclick="goTo('tipos')">Tipos de multimedia →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 3 — TIPOS DE MULTIMEDIA
+  ══════════════════════════════════════════════════ -->
+  <div class="section" id="s-tipos">
+    <div class="content">
+      <div class="section-header">
+        <div class="section-tag" style="color:#D85A30">Clasificación</div>
+        <h2 class="section-title">Tipos de multimedia</h2>
+        <p class="section-desc">Cada tipo de media tiene características propias. Haz clic en cada tarjeta para ver más detalles.</p>
+      </div>
+
+      <!-- NUEVO: imagen — mapa visual de los 5 tipos de multimedia -->
+      <div style="margin-bottom:1.5rem;">
+        <img
+          src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1000&q=80"
+          alt="Pantalla de computador con código y gráficos representando los tipos de medios digitales"
+          style="width:100%;max-height:200px;object-fit:cover;border-radius:12px;border:.5px solid rgba(0,0,0,.1);"
+        />
+        <p style="font-size:10px;color:#999;margin-top:4px;text-align:right;">Imagen: entorno de desarrollo multimedia — Unsplash (libre de uso)</p>
+      </div>
+
+      <!-- NUEVO: video — Los tipos de multimedia explicados (YouTube educativo) -->
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#D85A30;margin-bottom:.75rem;">📹 Video — Tipos de medios digitales</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:.5px solid rgba(216,90,48,.2);">
+          <!-- Video: introducción a formatos y tipos de medios — ID educativo verificado -->
+           <video controls
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;object-fit:cover;">
+    
+    <source src="assets/video/TipoMultimedia.mp4" type="video/mp4">
+
+  </video>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:6px;">🎓 Fuente: YouTube — Tipos y características</p>
+      </div>
+
+      <div class="tipos-grid">
+        <!-- TEXTO -->
+        <div class="tipo-card" id="tc-texto" onclick="toggleTipo('texto')">
+          <div class="tipo-header">
+            <div class="tipo-icon" style="background:#E1F5EE">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div><div class="tipo-name">Texto</div><div class="tipo-brief">El medio más básico y universal</div></div>
+          </div>
+          <div class="tipo-detail" id="td-texto">
+            <p>El texto es la forma más tradicional de comunicación digital. Incluye caracteres alfanuméricos, símbolos y tipografías. Puede ser <strong>estático</strong> (párrafos, títulos) o <strong>dinámico</strong> (texto animado, scrolling). Formatos clave: HTML, RTF, PDF y XML.</p>
+            <!-- NUEVO: imagen — ejemplo de tipografía digital en diseño web -->
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75"
+              alt="Tipografía digital en diseño web — texto como medio multimedia"
+              style="width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin-top:10px;border:.5px solid rgba(0,0,0,.08);"
+            />
+            <div class="tipo-tags">
+              <span class="tipo-tag" style="background:#E1F5EE;color:#085041">.html</span>
+              <span class="tipo-tag" style="background:#E1F5EE;color:#085041">.pdf</span>
+              <span class="tipo-tag" style="background:#E1F5EE;color:#085041">.xml</span>
+              <span class="tipo-tag" style="background:#E1F5EE;color:#085041">.rtf</span>
+            </div>
+          </div>
+        </div>
+        <!-- IMAGEN -->
+        <div class="tipo-card" id="tc-imagen" onclick="toggleTipo('imagen')">
+          <div class="tipo-header">
+            <div class="tipo-icon" style="background:#EEEDFE">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <div><div class="tipo-name">Imagen</div><div class="tipo-brief">Visual estática y gráficos</div></div>
+          </div>
+          <div class="tipo-detail" id="td-imagen">
+            <p>Se dividen en <strong>rasterizadas</strong> (píxeles, como JPEG o PNG) y <strong>vectoriales</strong> (matemáticas, como SVG). La resolución, profundidad de color y compresión son factores clave en su calidad y peso.</p>
+            <!-- NUEVO: imagen — comparativa entre imagen rasterizada y vectorial -->
+            <img
+              src="https://images.unsplash.com/photo-1561736778-92e52a7769ef?w=600&q=75"
+              alt="Diseño gráfico digital — trabajo con imágenes vectoriales y rasterizadas"
+              style="width:100%;max-height:130px;object-fit:cover;border-radius:8px;margin-top:10px;border:.5px solid rgba(83,74,183,.15);"
+            />
+            <div class="tipo-tags">
+              <span class="tipo-tag" style="background:#EEEDFE;color:#3C3489">.jpg</span>
+              <span class="tipo-tag" style="background:#EEEDFE;color:#3C3489">.png</span>
+              <span class="tipo-tag" style="background:#EEEDFE;color:#3C3489">.svg</span>
+              <span class="tipo-tag" style="background:#EEEDFE;color:#3C3489">.webp</span>
+            </div>
+          </div>
+        </div>
+        <!-- AUDIO -->
+        <div class="tipo-card" id="tc-audio" onclick="toggleTipo('audio')">
+          <div class="tipo-header">
+            <div class="tipo-icon" style="background:#FAECE7">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D85A30" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <div><div class="tipo-name">Audio</div><div class="tipo-brief">Sonido, voz y música digital</div></div>
+          </div>
+          <div class="tipo-detail" id="td-audio">
+            <p>El audio digital se caracteriza por su frecuencia de muestreo (Hz), profundidad de bits y canales. Existen formatos <strong>sin pérdida</strong> (WAV, FLAC) y con <strong>pérdida</strong> (MP3, AAC) que comprimen eliminando datos inaudibles.</p>
+            <!-- NUEVO: imagen — visualización de onda de audio en software de edición -->
+            <img
+              src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=75"
+              alt="Onda de audio digital en software de edición — representación de audio como tipo multimedia"
+              style="width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin-top:10px;border:.5px solid rgba(216,90,48,.15);"
+            />
+            <!-- NUEVO: audio — ejemplo de audio digital (tono de prueba libre de derechos) -->
+            <div style="margin-top:10px;background:#fff7f4;border-radius:8px;padding:.75rem;border:.5px solid rgba(216,90,48,.2);">
+              <div style="font-size:11px;color:#993C1D;margin-bottom:5px;font-weight:500;">▶ Escucha: ejemplo de audio MP3</div>
+              <audio controls
+  style="width:100%;border-radius:4px;accent-color:#D85A30;">
+  
+  <source src="assets/audio/ac.mp3" type="audio/mpeg">
+  
+  Tu navegador no soporta el elemento de audio.
+</audio>
+              <!-- NUEVO: link -->
+              <a href="https://freemusicarchive.org" target="_blank" rel="noopener noreferrer"
+                style="font-size:10px;color:#D85A30;display:block;margin-top:4px;">
+                Fuente: Free Music Archive 
+              </a>
+            </div>
+            <div class="tipo-tags" style="margin-top:8px;">
+              <span class="tipo-tag" style="background:#FAECE7;color:#4A1B0C">.mp3</span>
+              <span class="tipo-tag" style="background:#FAECE7;color:#4A1B0C">.wav</span>
+              <span class="tipo-tag" style="background:#FAECE7;color:#4A1B0C">.flac</span>
+              <span class="tipo-tag" style="background:#FAECE7;color:#4A1B0C">.ogg</span>
+            </div>
+          </div>
+        </div>
+        <!-- VIDEO -->
+        <div class="tipo-card" id="tc-video" onclick="toggleTipo('video')">
+          <div class="tipo-header">
+            <div class="tipo-icon" style="background:#E6F1FB">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#378ADD" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div><div class="tipo-name">Video</div><div class="tipo-brief">Imágenes en movimiento</div></div>
+          </div>
+          <div class="tipo-detail" id="td-video">
+            <p>Es una secuencia de fotogramas reproducidos a velocidad suficiente para crear ilusión de movimiento. Parámetros clave: <strong>resolución</strong> (720p, 1080p, 4K), <strong>FPS</strong> y el <strong>códec</strong> de compresión. Puede ser streaming o grabado.</p>
+            <!-- NUEVO: imagen — edición de video en timeline de software profesional -->
+            <img
+              src="https://www.vhv.rs/dpng/d/34-344829_kick-buttowski-logo-hd-png-download.png"
+              alt="Timeline de edición de video en software de postproducción digital"
+              style="width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin-top:10px;border:.5px solid rgba(55,138,221,.15);"
+            />
+            <!-- NUEVO: video — video de muestra incrustado (YouTube, clip corto educativo) -->
+            <div style="margin-top:10px;">
+              <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:.5px solid rgba(55,138,221,.2);">
+                <!-- Video: Fundamentos de edición de video digital — educativo -->
+                <video controls
+  title="Fundamentos del video digital — formatos, resolución y compresión"
+  style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;object-fit:cover;">
+  
+  <source src="assets/video/Kick.mp4" type="video/mp4">
+
+</video>
+              </div>
+              <p style="font-size:10px;color:#888;margin-top:4px;">Video: conceptos de video digital, FPS y códecs — YouTube</p>
+            </div>
+            <div class="tipo-tags" style="margin-top:8px;">
+              <span class="tipo-tag" style="background:#E6F1FB;color:#0C447C">.mp4</span>
+              <span class="tipo-tag" style="background:#E6F1FB;color:#0C447C">.mov</span>
+              <span class="tipo-tag" style="background:#E6F1FB;color:#0C447C">.webm</span>
+              <span class="tipo-tag" style="background:#E6F1FB;color:#0C447C">.avi</span>
+            </div>
+          </div>
+        </div>
+        <!-- ANIMACIÓN -->
+        <div class="tipo-card" id="tc-animacion" onclick="toggleTipo('animacion')">
+          <div class="tipo-header">
+            <div class="tipo-icon" style="background:#FAEEDA">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#BA7517" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            </div>
+            <div><div class="tipo-name">Animación</div><div class="tipo-brief">Movimiento e interactividad</div></div>
+          </div>
+          <div class="tipo-detail" id="td-animacion">
+            <p>Comprende desde GIFs hasta animaciones 3D y motion graphics. Se divide en <strong>2D</strong> (CSS, SVG, After Effects), <strong>3D</strong> (Cinema 4D, Blender) e <strong>interactiva</strong> (JavaScript, WebGL). Fundamental en videojuegos, cine y UX.</p>
+            <!-- NUEVO: imagen — escena de animación 3D en software Blender -->
+            <img
+              src="https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?w=600&q=75"
+              alt="Animación 3D digital creada con herramientas de diseño multimedia"
+              style="width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin-top:10px;border:.5px solid rgba(186,117,23,.15);"
+            />
+            <div class="tipo-tags" style="margin-top:8px;">
+              <span class="tipo-tag" style="background:#FAEEDA;color:#412402">.gif</span>
+              <span class="tipo-tag" style="background:#FAEEDA;color:#412402">.apng</span>
+              <span class="tipo-tag" style="background:#FAEEDA;color:#412402">.lottie</span>
+              <span class="tipo-tag" style="background:#FAEEDA;color:#412402">WebGL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NUEVO: link — recursos externos sobre tipos de multimedia -->
+      <div style="margin-top:1.5rem;background:#f5f5f0;border-radius:10px;border:.5px solid rgba(0,0,0,.1);padding:1rem 1.25rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#666;margin-bottom:.75rem;">📚 Recursos recomendados</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <!-- NUEVO: link -->
+          <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/audio" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#D85A30;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            MDN — Elemento &lt;audio&gt; en HTML5
+          </a>
+          <!-- NUEVO: link -->
+          <a href="https://www.w3schools.com/html/html_media.asp" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#534AB7;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            W3Schools — Tutorial completo de multimedia HTML
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-footer">
+        <button class="btn-secondary" onclick="goTo('multimedia')">← ¿Qué es?</button>
+        <button class="btn-primary" onclick="goTo('aplicaciones')">Aplicaciones →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 4 — APLICACIONES
+  ══════════════════════════════════════════════════ -->
+  <div class="section" id="s-aplicaciones">
+    <div class="content">
+      <div class="section-header">
+        <div class="section-tag" style="color:#D85A30">Casos de uso</div>
+        <h2 class="section-title">Aplicaciones multimedia</h2>
+        <p class="section-desc">La multimedia permea todos los sectores de la sociedad moderna. Estas son algunas de las áreas donde tiene mayor impacto.</p>
+      </div>
+
+      <!-- NUEVO: imagen — ecosistema de dispositivos y aplicaciones digitales -->
+      <div style="margin-bottom:1.5rem;">
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&q=80"
+          alt="Equipo de trabajo con múltiples dispositivos digitales usando aplicaciones multimedia"
+          style="width:100%;max-height:200px;object-fit:cover;border-radius:12px;border:.5px solid rgba(0,0,0,.1);"
+        />
+        <p style="font-size:10px;color:#999;margin-top:4px;text-align:right;">Imagen: ecosistema de aplicaciones digitales en el trabajo — Unsplash (libre de uso)</p>
+      </div>
+
+      <!-- NUEVO: video — Aplicaciones de la multimedia en la industria (YouTube) -->
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#D85A30;margin-bottom:.75rem;">📹 Video — Aplicaciones de la multimedia</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:.5px solid rgba(216,90,48,.2);">
+          <!-- Video: Multimedia en educación y sectores industriales — educativo en español -->
+          <video controls
+            src="assets/video/TipoApli.mp4"
+            title="Aplicaciones de la multimedia en educación, salud y entretenimiento"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;">
+        </video>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:6px;">🎓 Fuente: YouTube — Usos reales de multimedia en la Educaión</p>
+      </div>
+
+      <!-- NUEVO: audio — podcast sobre tendencias en aplicaciones multimedia -->
+      <div style="margin-bottom:1.5rem;background:#fff7f0;border-radius:10px;border:.5px solid rgba(216,90,48,.2);padding:1rem 1.25rem;">
+        <div style="font-size:12px;font-weight:500;color:#4A1B0C;margin-bottom:3px;">🎙️ Audio — Tendencias en aplicaciones multimedia</div>
+        <div style="font-size:11px;color:#993C1D;margin-bottom:8px;">Ejemplo de análisis. Características técnicas de grabación y difusión del audio</div>
+        <audio controls style="width:100%;border-radius:6px;accent-color:#D85A30;">
+          <source src="assets/audio/apliaudio.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+        <p style="font-size:10px;color:#c86a30;margin-top:5px;">ℹ️ Audio demostrativo — Muestra cómo el audio se utiliza y funciona</p>
+      </div>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="app-icon" style="background:#E1F5EE"><svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2" width="20" height="20"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="app-name">E-Learning</div>
+          <div class="app-desc">Plataformas educativas con video-clases, simulaciones interactivas, cuestionarios y foros. Coursera, Khan Academy, Moodle.</div>
+          <span class="app-badge" style="background:#E1F5EE;color:#085041">Educación</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#EEEDFE"><svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="app-name">Streaming</div>
+          <div class="app-desc">Plataformas de video y música bajo demanda. Netflix, Spotify, Disney+, YouTube Premium.</div>
+          <span class="app-badge" style="background:#EEEDFE;color:#3C3489">Entretenimiento</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FAECE7"><svg viewBox="0 0 24 24" fill="none" stroke="#D85A30" stroke-width="2" width="20" height="20"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div class="app-name">Videojuegos</div>
+          <div class="app-desc">Motores como Unity y Unreal combinan gráficos 3D, audio espacial, física y narrativa interactiva en tiempo real.</div>
+          <span class="app-badge" style="background:#FAECE7;color:#4A1B0C">Gaming</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#E6F1FB"><svg viewBox="0 0 24 24" fill="none" stroke="#378ADD" stroke-width="2" width="20" height="20"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="app-name">Telemedicina</div>
+          <div class="app-desc">Videoconsultas, imágenes médicas digitales, historiales clínicos interactivos y simulaciones para formación médica.</div>
+          <span class="app-badge" style="background:#E6F1FB;color:#0C447C">Salud</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FAEEDA"><svg viewBox="0 0 24 24" fill="none" stroke="#BA7517" stroke-width="2" width="20" height="20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="app-name">Publicidad digital</div>
+          <div class="app-desc">Anuncios interactivos, banners animados, video-ads y campañas transmedia en múltiples plataformas.</div>
+          <span class="app-badge" style="background:#FAEEDA;color:#412402">Marketing</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FCEBEB"><svg viewBox="0 0 24 24" fill="none" stroke="#E24B4A" stroke-width="2" width="20" height="20"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="app-name">Realidad Virtual/AR</div>
+          <div class="app-desc">Experiencias inmersivas de 360°, realidad aumentada en móviles, museos virtuales y entornos de capacitación.</div>
+          <span class="app-badge" style="background:#FCEBEB;color:#501313">Inmersión</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#EAF3DE"><svg viewBox="0 0 24 24" fill="none" stroke="#639922" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+          <div class="app-name">Museos digitales</div>
+          <div class="app-desc">Recorridos virtuales interactivos, piezas de arte con capas de información, audio-guías y experiencias 3D.</div>
+          <span class="app-badge" style="background:#EAF3DE;color:#173404">Cultura</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#E1F5EE"><svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="app-name">Redes sociales</div>
+          <div class="app-desc">Plataformas que integran texto, foto, video corto, transmisiones en vivo y herramientas de creación de contenido.</div>
+          <span class="app-badge" style="background:#E1F5EE;color:#085041">Social</span>
+        </div>
+      </div>
+
+      <!-- NUEVO: link — plataformas y herramientas multimedia reales -->
+      <div style="margin-top:1.5rem;background:#f5f5f0;border-radius:10px;border:.5px solid rgba(0,0,0,.1);padding:1rem 1.25rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#666;margin-bottom:.75rem;">🔗 Explora herramientas y plataformas</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
+          <!-- NUEVO: link -->
+          <a href="https://www.khanacademy.org" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#1D9E75;text-decoration:none;padding:8px 12px;background:#fff;border-radius:8px;border:.5px solid rgba(0,0,0,.1);display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Khan Academy — E-Learning
+          </a>
+          <!-- NUEVO: link -->
+          <a href="https://unity.com" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#D85A30;text-decoration:none;padding:8px 12px;background:#fff;border-radius:8px;border:.5px solid rgba(0,0,0,.1);display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Unity — Motor de videojuegos
+          </a>
+          <!-- NUEVO: link -->
+          <a href="https://www.coursera.org/browse/arts-and-humanities/music-and-art" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#534AB7;text-decoration:none;padding:8px 12px;background:#fff;border-radius:8px;border:.5px solid rgba(0,0,0,.1);display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Coursera — Cursos de multimedia
+          </a>
+          <!-- NUEVO: link -->
+          <a href="https://blender.org" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#378ADD;text-decoration:none;padding:8px 12px;background:#fff;border-radius:8px;border:.5px solid rgba(0,0,0,.1);display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Blender — Animación 3D gratuita
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-footer">
+        <button class="btn-secondary" onclick="goTo('tipos')">← Tipos</button>
+        <button class="btn-primary" onclick="goTo('rol')">El Ingeniero →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 5 — ROL DEL INGENIERO
+  ══════════════════════════════════════════════════ -->
+  <div class="section" id="s-rol">
+    <div class="content">
+      <div class="section-header">
+        <div class="section-tag" style="color:#378ADD">Perfil profesional</div>
+        <h2 class="section-title">El Ingeniero Multimedia</h2>
+        <p class="section-desc">Un profesional que une el pensamiento técnico con la sensibilidad creativa para diseñar experiencias digitales integradas.</p>
+      </div>
+
+      <!-- NUEVO: imagen — profesional multimedia trabajando en proyectos creativos y tecnológicos -->
+      <div style="margin-bottom:1.5rem;">
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=80"
+          alt="Equipo de ingenieros multimedia colaborando en un proyecto de diseño digital"
+          style="width:100%;max-height:200px;object-fit:cover;border-radius:12px;border:.5px solid rgba(55,138,221,.2);"
+        />
+        <p style="font-size:10px;color:#999;margin-top:4px;text-align:right;">Imagen: equipo de trabajo en ingeniería creativa y tecnológica — Unsplash (libre de uso)</p>
+      </div>
+
+      <!-- NUEVO: video — El rol del Ingeniero Multimedia en la industria (YouTube) -->
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#378ADD;margin-bottom:.75rem;">📹 Video — ¿Qué hace un Ingeniero Multimedia?</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:.5px solid rgba(55,138,221,.2);">
+          <!-- Video: perfil profesional de ingeniería multimedia y diseño digital — educativo -->
+           <video controls
+    title="¿Qué hace un Ingeniero Multimedia? — Perfil y salidas profesionales"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;object-fit:cover;">
+    
+    <source src="assets/video/Quehace.mp4" type="video/mp4">
+
+  </video>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:6px;">🎓 Fuente: YouTube — Perfil profesional, competencias y campo laboral del Ingeniero Multimedia</p>
+      </div>
+
+      <!-- NUEVO: audio — testimonio/podcast sobre la carrera de ingeniería multimedia -->
+      <div style="margin-bottom:1.5rem;background:#eef5fd;border-radius:10px;border:.5px solid rgba(55,138,221,.25);padding:1rem 1.25rem;">
+        <div style="font-size:12px;font-weight:500;color:#0C447C;margin-bottom:3px;">🎙️ Audio — Experiencia sobre la carrera en multimedia</div>
+        <div style="font-size:11px;color:#185FA5;margin-bottom:8px;">Fragmento de conferencia sobre Estudiante de CESUN - Ingeniero Multimedia</div>
+        <audio controls style="width:100%;border-radius:6px;accent-color:#378ADD;">
+          <source src="assets/audio/experence.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+        <p style="font-size:10px;color:#4a85c0;margin-top:5px;">ℹ️ Audio demostrativo — Explica el rol de ingeniero desde su conocimiento profesional</p>
+      </div>
+
+      <div class="role-hero">
+        <div class="role-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="36" height="36"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div>
+          <div class="role-title">Ingeniero en Multimedia</div>
+          <div class="role-desc">El ingeniero multimedia diseña, desarrolla e implementa sistemas que integran múltiples tipos de media. Trabaja en la intersección entre la tecnología (programación, redes, bases de datos), el diseño (UX/UI, gráficos, animación) y la comunicación (guion, narrativa, accesibilidad). Su campo laboral abarca estudios de producción, empresas de software, agencias creativas, startups de EdTech y departamentos de innovación.</div>
+        </div>
+      </div>
+
+      <div class="section-tag" style="color:#378ADD;margin-bottom:.75rem">Competencias clave</div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-header"><div class="skill-dot" style="background:#1D9E75"></div><div class="skill-name">Programación multimedia</div></div>
+          <div class="skill-desc">HTML5, CSS3, JavaScript, WebGL, frameworks de animación y desarrollo de aplicaciones interactivas.</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="background:#1D9E75;--w:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><div class="skill-dot" style="background:#534AB7"></div><div class="skill-name">Diseño gráfico y UX</div></div>
+          <div class="skill-desc">Principios visuales, Figma, tipografía, arquitectura de información y diseño centrado en el usuario.</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="background:#534AB7;--w:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><div class="skill-dot" style="background:#D85A30"></div><div class="skill-name">Producción audiovisual</div></div>
+          <div class="skill-desc">Grabación, edición de video y audio, color grading, mezcla, postproducción y animación 2D/3D.</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="background:#D85A30;--w:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><div class="skill-dot" style="background:#378ADD"></div><div class="skill-name">Redes y streaming</div></div>
+          <div class="skill-desc">Protocolos de transmisión, CDNs, compresión, latencia y arquitecturas de entrega de contenido.</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="background:#378ADD;--w:75%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><div class="skill-dot" style="background:#BA7517"></div><div class="skill-name">Gestión de proyectos</div></div>
+          <div class="skill-desc">Planificación, metodologías ágiles, comunicación con clientes, manejo de presupuesto y equipos creativos.</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="background:#BA7517;--w:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><div class="skill-dot" style="background:#E24B4A"></div><div class="skill-name">IA y tecnologías emergentes</div></div>
+          <div class="skill-desc">IA generativa, realidad virtual/aumentada, machine learning aplicado a media y computación creativa.</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="background:#E24B4A;--w:65%"></div></div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem">
+        <div class="section-tag" style="color:#1D9E75;margin-bottom:.75rem">Ruta de formación</div>
+        <div class="path-steps">
+          <div class="path-step">
+            <div class="step-line"><div class="step-dot">1</div><div class="step-connector"></div></div>
+            <div class="step-body"><div class="step-title">Fundamentos técnicos</div><div class="step-detail">Matemáticas, álgebra lineal, teoría de la información, programación básica y arquitectura de computadores.</div></div>
+          </div>
+          <div class="path-step">
+            <div class="step-line"><div class="step-dot">2</div><div class="step-connector"></div></div>
+            <div class="step-body"><div class="step-title">Diseño y comunicación</div><div class="step-detail">Teoría del color, tipografía, narrativa visual, semiótica y principios de comunicación digital.</div></div>
+          </div>
+          <div class="path-step">
+            <div class="step-line"><div class="step-dot">3</div><div class="step-connector"></div></div>
+            <div class="step-body"><div class="step-title">Producción audiovisual</div><div class="step-detail">Fotografía, video, audio, edición, postproducción y distribución de contenidos digitales.</div></div>
+          </div>
+          <div class="path-step">
+            <div class="step-line"><div class="step-dot">4</div><div class="step-connector"></div></div>
+            <div class="step-body"><div class="step-title">Desarrollo e integración</div><div class="step-detail">Programación web, aplicaciones móviles, bases de datos, APIs y arquitecturas de sistemas multimedia.</div></div>
+          </div>
+          <div class="path-step">
+            <div class="step-line"><div class="step-dot" style="border-color:#534AB7;color:#534AB7">5</div></div>
+            <div class="step-body"><div class="step-title">Especialización y práctica</div><div class="step-detail">XR (AR/VR), IA generativa, UX avanzado o producción transmedia. Proyectos reales y portafolio.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NUEVO: link — recursos para formación profesional en multimedia -->
+      <div style="margin-top:1.5rem;background:#f5f5f0;border-radius:10px;border:.5px solid rgba(0,0,0,.1);padding:1rem 1.25rem;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#666;margin-bottom:.75rem;">🎓 Recursos para tu formación profesional</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <!-- NUEVO: link -->
+          <a href="https://www.edx.org/learn/multimedia" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#378ADD;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            edX — Cursos universitarios en multimedia y diseño digital
+          </a>
+          <!-- NUEVO: link -->
+          <a href="https://www.adobe.com/creativecloud.html" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#D85A30;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Adobe Creative Cloud — Suite profesional multimedia
+          </a>
+          <!-- NUEVO: link -->
+          <a href="https://blender.org/support/tutorials/" target="_blank" rel="noopener noreferrer"
+            style="font-size:13px;color:#1D9E75;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Blender Tutorials — Animación y modelado 3D gratuito
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-footer">
+        <button class="btn-secondary" onclick="goTo('aplicaciones')">← Aplicaciones</button>
+        <button class="btn-primary" onclick="goTo('quiz')">Ir al quiz →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 6 — QUIZ
+  ══════════════════════════════════════════════════ -->
+  <div class="section" id="s-quiz">
+    <div class="content">
+      <div class="section-header">
+        <div class="section-tag" style="color:#534AB7">Evaluación</div>
+        <h2 class="section-title">Quiz de conocimientos</h2>
+        <p class="section-desc">Pon a prueba lo que aprendiste. Responde cada pregunta y obtén tu puntuación final.</p>
+      </div>
+
+      <div class="quiz-box" id="quiz-container">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="quiz-progress" style="width:0%"></div></div>
+        <div class="quiz-counter" id="quiz-counter">Pregunta 1 de 6</div>
+        <div class="quiz-q" id="quiz-question"></div>
+        <div class="quiz-opts" id="quiz-options"></div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <button class="btn-primary quiz-next" id="quiz-next-btn" onclick="nextQuestion()">Siguiente pregunta →</button>
+      </div>
+
+      <div id="quiz-result" class="quiz-result">
+        <div class="result-score" id="result-score"></div>
+        <div class="result-msg" id="result-msg"></div>
+        <div class="result-sub" id="result-sub"></div>
+        <div class="result-btns">
+          <button class="btn-primary" onclick="resetQuiz()">Reintentar</button>
+          <button class="btn-secondary" onclick="goTo('inicio')">← Inicio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
